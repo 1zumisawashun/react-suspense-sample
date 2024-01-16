@@ -1,4 +1,4 @@
-import { Parent } from "@/components/Parent";
+import { Parent } from "@/features/01_sample/components/Parent";
 
 /**
  * @description 次の記事を参考に実装した。通常のswrはレンダー後にフェッチすることを確認することができる

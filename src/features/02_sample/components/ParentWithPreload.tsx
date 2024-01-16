@@ -1,6 +1,6 @@
 import useSWR, { preload } from "swr";
 import { fetcher } from "@/functions/helpers/fetcher";
-import { ChildWithPreload } from "@/components/ChildWithPreload";
+import { ChildWithPreload } from "@/features/02_sample/components/ChildWithPreload";
 
 // https://swr.vercel.app/ja/docs/prefetching.ja
 preload("parent-with-preload", fetcher);

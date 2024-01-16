@@ -1,4 +1,4 @@
-import { ParentWithPreload } from "@/components/ParentWithPreload";
+import { ParentWithPreload } from "@/features/02_sample/components/ParentWithPreload";
 
 /**
  * @description 次の記事を参考に実装した。通常のswrはレンダー後にフェッチすることを確認することができる

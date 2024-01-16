@@ -1,4 +1,4 @@
-import { ParentWithSuspense } from "@/components/ParentWithSuspense";
+import { ParentWithSuspense } from "@/features/03_sample/components/ParentWithSuspense";
 import { Suspense } from "react";
 
 export function Sample3() {

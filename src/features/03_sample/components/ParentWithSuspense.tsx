@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { fetcher } from "@/functions/helpers/fetcher";
-import { ChildWithSuspense } from "@/components/ChildWithSuspense";
+import { ChildWithSuspense } from "@/features/03_sample/components/ChildWithSuspense";
 import { Suspense } from "react";
 
 export function ParentWithSuspense() {
