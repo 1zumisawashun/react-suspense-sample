@@ -5,7 +5,7 @@ import { fetcher } from "@/functions/helpers/fetcher";
 preload("child-with-preload", fetcher);
 
 export const ChildWithPreload = () => {
-  const { data } = useSWR("child--with-preload", fetcher, { suspense: true });
+  const { data } = useSWR("child-with-preload", fetcher, { suspense: true });
 
   console.log(`render Child (${JSON.stringify(data)})`);
 

@@ -19,6 +19,12 @@ export const Header: React.FC = () => {
         <a href="/03_sample" className={styles["nav-item"]}>
           03_sample
         </a>
+        <a href="/04_sample" className={styles["nav-item"]}>
+          04_sample
+        </a>
+        <a href="/05_sample" className={styles["nav-item"]}>
+          05_sample
+        </a>
       </nav>
     </header>
   );
