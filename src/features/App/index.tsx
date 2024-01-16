@@ -7,7 +7,7 @@ export function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className={styles["container"]}>
+    <div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className={styles["logo"]} alt="Vite logo" />

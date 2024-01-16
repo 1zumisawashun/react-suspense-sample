@@ -13,7 +13,7 @@ const Sample3 = lazy(() => import("@/pages/03_sample"));
 
 function Layout() {
   return (
-    <Suspense fallback={<p>loading...</p>}>
+    <Suspense>
       <ScrollRestoration />
       <Outlet />
     </Suspense>
