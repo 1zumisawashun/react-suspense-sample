@@ -6,7 +6,7 @@ import { ChildWithPreload } from "@/components/ChildWithPreload";
 preload("parent-with-preload", fetcher);
 
 export function ParentWithPreload() {
-  const { data } = useSWR("parent-preload", fetcher, { suspense: true });
+  const { data } = useSWR("parent-with-preload", fetcher, { suspense: true });
   console.log(`render Parent (${JSON.stringify(data)})`);
   return (
     <div>
