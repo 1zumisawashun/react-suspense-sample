@@ -12,6 +12,7 @@ const Sample2 = lazy(() => import("@/pages/02_sample"));
 const Sample3 = lazy(() => import("@/pages/03_sample"));
 const Sample4 = lazy(() => import("@/pages/04_sample"));
 const Sample5 = lazy(() => import("@/pages/05_sample"));
+const Sample6 = lazy(() => import("@/pages/06_sample"));
 
 function Layout() {
   return (
@@ -34,6 +35,7 @@ function children() {
     { path: "/03_sample", element: <Sample3 /> },
     { path: "/04_sample", element: <Sample4 /> },
     { path: "/05_sample", element: <Sample5 /> },
+    { path: "/06_sample", element: <Sample6 /> },
   ];
 
   return [...catalogRoutes, ...publicRoutes];
