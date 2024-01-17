@@ -12,19 +12,3 @@ export function Sample4() {
     </Suspense>
   );
 }
-
-export function Sample5() {
-  return (
-    <>
-      <Suspense>
-        <ChildWithSuspense1></ChildWithSuspense1>
-      </Suspense>
-      <Suspense>
-        <ChildWithSuspense2></ChildWithSuspense2>
-      </Suspense>
-      <Suspense>
-        <ChildWithSuspense3></ChildWithSuspense3>
-      </Suspense>
-    </>
-  );
-}

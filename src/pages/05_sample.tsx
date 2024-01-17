@@ -1,4 +1,4 @@
-import { Sample5 } from "@/features/04_sample";
+import { Sample5 } from "@/features/05_sample";
 import { Header } from "@/components/Header";
 import { Center } from "@/components/Center";
 
