@@ -11,10 +11,10 @@ export function Sample4() {
 
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<p>loading...</p>}>
         <ChildWithSuspense1 resource={resource1}></ChildWithSuspense1>
       </Suspense>
-      <Suspense>
+      <Suspense fallback={<p>loading...</p>}>
         <ChildWithSuspense2 resource={resource2}></ChildWithSuspense2>
       </Suspense>
     </>
