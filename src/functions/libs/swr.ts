@@ -6,12 +6,18 @@ const useSWR = <Data>(
 ) => {
   try {
     const res = useRawSWR<Data>(key, fetcher);
+    console.log(res, "res");
+    if (!res.data) throw fetcher;
     // If the data is in swr's cache
+    // てことは無かったらthrowしてやるのか、
+    // throw fetcher();
     return { read: () => res.data as Data };
   } catch (promiseOrError) {
-    if ((typeof promiseOrError as any).then === "function") {
-      return wrapPromise<{ data: Data }>(promiseOrError as any);
-    }
+    console.log(promiseOrError, "promiseOrError");
+    // if ((typeof promiseOrError as any).then === "function") {
+    //   console.log(promiseOrError);
+    return wrapPromise<{ data: Data }>(promiseOrError as any);
+    // }
     throw promiseOrError;
   }
 };
@@ -37,7 +43,8 @@ function wrapPromise<T extends { data?: any }>(promise: Promise<T>) {
       } else if (status === "error") {
         throw result;
       } else if (status === "success") {
-        return (result as T).data;
+        return result as T;
+        // return (result as T).data;
       }
       throw new Error("unknown status in wrapPromise");
     },
