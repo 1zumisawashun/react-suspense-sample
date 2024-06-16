@@ -27,10 +27,6 @@ function Layout() {
 }
 
 function children() {
-  const isLocalhost = document.location.hostname === "localhost";
-
-  const catalogRoutes = isLocalhost ? [] : [];
-
   const publicRoutes = [
     { path: "/", element: <App /> },
     { path: "/01_sample", element: <Sample1 /> },
@@ -43,7 +39,7 @@ function children() {
     { path: "/08_sample", element: <Sample8 /> },
   ];
 
-  return [...catalogRoutes, ...publicRoutes];
+  return [...publicRoutes];
 }
 
 export const router = createBrowserRouter([
