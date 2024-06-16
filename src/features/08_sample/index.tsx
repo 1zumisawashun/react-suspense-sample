@@ -1,5 +1,6 @@
-import { PokemonData } from "./components/PokemonData";
+import { usePokemonData } from "@/functions/helpers/fetchPokemonData";
 
+// フェッチが並行で処理される
 export function Sample8() {
   return (
     <>
@@ -8,4 +9,10 @@ export function Sample8() {
       <PokemonData name="3" />
     </>
   );
+}
+
+function PokemonData({ name }: { name: string }) {
+  const { data } = usePokemonData(name);
+
+  return <h1>{data.name}</h1>;
 }

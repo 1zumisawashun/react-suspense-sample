@@ -1,6 +1,8 @@
-import { usePokemonData } from "../08_sample/hooks/usePokemonData";
-import { PokemonData } from "../08_sample/components/PokemonData";
+import { usePokemonData } from "@/functions/helpers/fetchPokemonData";
 
+/**
+ * ネストさせるとウォーターフォール問題が発生する
+ */
 function Parent() {
   const { data } = usePokemonData("1");
   return (
@@ -23,4 +25,10 @@ function Child() {
 
 export function Sample9() {
   return <Parent />;
+}
+
+function PokemonData({ name }: { name: string }) {
+  const { data } = usePokemonData(name);
+
+  return <h1>{data.name}</h1>;
 }

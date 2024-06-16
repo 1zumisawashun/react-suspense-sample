@@ -1,3 +1,4 @@
+import { wrapPromise } from "@/functions/helpers/wrapPromise";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
 const API = {
@@ -41,10 +42,19 @@ export async function fetchLocationData(url: any, pokemonName: any) {
 }
 
 /** @see https://zenn.dev/mylifeasjosh/articles/d12e231adbde15 */
-
 export function usePokemonData(name: string) {
   return useSuspenseQuery({
     queryKey: ["pokemonData", name],
     queryFn: () => fetchPokemonData(name),
   });
+}
+
+export function fetchData(name: any) {
+  const pokemon = fetchPokemonData(name);
+  const encounters = fetchEncounterData(name);
+
+  return {
+    pokemon: wrapPromise(pokemon),
+    encounters: wrapPromise(encounters),
+  };
 }

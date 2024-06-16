@@ -1,9 +1,29 @@
-import { Parent } from "@/features/01_sample/components/Parent";
-
+import useSWR from "swr";
+import { fetcher } from "@/functions/helpers/fetcher";
 /**
- * @description 次の記事を参考に実装した。通常のswrはレンダー後にフェッチすることを確認することができる
+ * fetch-then-render（fetch-on-render）の挙動になっている。
+ * 通常のswrはレンダー後にフェッチする。
  * @see https://zenn.dev/aidiot_dev/articles/20231026-useeffect-waterfall#comment-534ff866cc75bc
  */
 export function Sample1() {
   return <Parent></Parent>;
 }
+
+export function Parent() {
+  const { data } = useSWR("parent", fetcher);
+  console.log(`render Parent (${JSON.stringify(data)})`);
+
+  return (
+    <div>
+      <div>{data?.data}</div>
+      {data && <Child />}
+    </div>
+  );
+}
+
+const Child = () => {
+  const { data } = useSWR("child", fetcher);
+  console.log(`render Child (${JSON.stringify(data)})`);
+
+  return <div>{data?.data}</div>;
+};

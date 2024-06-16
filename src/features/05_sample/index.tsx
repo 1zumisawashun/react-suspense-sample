@@ -1,8 +1,12 @@
 import { Suspense } from "react";
-import { fetchProfileData } from "./hooks/api";
+import { fetchProfileData } from "@/functions/helpers/fetchProfileData";
 
 const resource = fetchProfileData();
 
+/**
+ * リソースくんを使った方法
+ * render-as-you-fetchの挙動になっている
+ */
 export function Sample5() {
   return (
     <Suspense fallback={<h1>Loading profile...</h1>}>

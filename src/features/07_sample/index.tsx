@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-
-import { fetchData } from "./hooks/preload";
-import { fetchLocationData } from "../08_sample/hooks/usePokemonData";
+import {
+  fetchData,
+  fetchLocationData,
+} from "@/functions/helpers/fetchPokemonData";
 
 const data = fetchData("pikachu");
 
