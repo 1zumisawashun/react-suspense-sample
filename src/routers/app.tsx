@@ -4,6 +4,8 @@ import {
   ScrollRestoration,
   Outlet,
 } from "react-router-dom";
+import { Header } from "@/components/Header";
+import { Center } from "@/components/Center";
 
 /* eslint-disable react-refresh/only-export-components */
 
@@ -22,7 +24,10 @@ function Layout() {
   return (
     <Suspense>
       <ScrollRestoration />
-      <Outlet />
+      <Header></Header>
+      <Center>
+        <Outlet />
+      </Center>
     </Suspense>
   );
 }
