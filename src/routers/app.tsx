@@ -1,9 +1,10 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import {
   createBrowserRouter,
   ScrollRestoration,
   Outlet,
 } from "react-router-dom";
+
 /* eslint-disable react-refresh/only-export-components */
 
 const App = lazy(() => import("@/pages/App"));
@@ -18,10 +19,10 @@ const Sample8 = lazy(() => import("@/pages/08_sample"));
 
 function Layout() {
   return (
-    <Suspense>
+    <>
       <ScrollRestoration />
       <Outlet />
-    </Suspense>
+    </>
   );
 }
 
