@@ -1,14 +1,8 @@
-import { Sample4 } from "@/features/04_sample";
-import { Header } from "@/components/Header";
-import { Center } from "@/components/Center";
-
 export default function Page() {
   return (
     <>
-      <Header></Header>
-      <Center>
-        <Sample4></Sample4>
-      </Center>
+      <h1>Sample 4</h1>
+      <p>Open the console and check the logs</p>
     </>
   );
 }

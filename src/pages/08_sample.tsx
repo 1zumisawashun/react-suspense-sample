@@ -1,14 +1,21 @@
-import { Sample8 } from "@/features/08_sample";
-import { Header } from "@/components/Header";
-import { Center } from "@/components/Center";
+import { usePokemonData } from "@/functions/helpers/fetchPokemonData";
+
+/**
+ * フェッチが並行で処理される
+ * @see https://zenn.dev/mylifeasjosh/articles/d12e231adbde15
+ */
+function PokemonData({ name }: { name: string }) {
+  const { data } = usePokemonData(name);
+
+  return <h1>{data.name}</h1>;
+}
 
 export default function Page() {
   return (
     <>
-      <Header></Header>
-      <Center>
-        <Sample8></Sample8>
-      </Center>
+      <PokemonData name="1" />
+      <PokemonData name="2" />
+      <PokemonData name="3" />
     </>
   );
 }
