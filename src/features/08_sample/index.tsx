@@ -1,21 +1,11 @@
-import { useRepoData } from "./hooks/useRepoData";
-
-/** @see https://zenn.dev/mylifeasjosh/articles/d12e231adbde15 */
-function RepoData({ name }: { name: string }) {
-  const { data } = useRepoData(name);
-
-  return (
-    <>
-      <h1>{data.name}</h1>
-    </>
-  );
-}
+import { PokemonData } from "./components/PokemonData";
 
 export function Sample8() {
   return (
     <>
-      <RepoData name="tanstack/query" />
-      <RepoData name="tanstack/table" />
+      <PokemonData name="1" />
+      <PokemonData name="2" />
+      <PokemonData name="3" />
     </>
   );
 }

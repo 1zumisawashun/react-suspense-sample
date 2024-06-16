@@ -1,19 +1,9 @@
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { fetchData, fetchLocation } from "./hooks/api";
+import { fetchData } from "./hooks/preload";
+import { fetchLocationData } from "../08_sample/hooks/usePokemonData";
 
 const data = fetchData("pikachu");
-
-function PokemonPage() {
-  console.log("rerender");
-  const pokemon = data.pokemon.read();
-
-  return (
-    <>
-      <h1>{pokemon.name}</h1>
-    </>
-  );
-}
 
 function PokemonEncounters() {
   const encounters = data.encounters.read();
@@ -39,7 +29,7 @@ function LocationDetails({ url, pokemonName }: any) {
   const [otherPokemon, setOtherPokemon] = useState(null);
 
   useEffect(() => {
-    fetchLocation(url, "pikachu").then((encounters: any) => {
+    fetchLocationData(url, "pikachu").then((encounters: any) => {
       setOtherPokemon(encounters.join(", "));
     });
   }, [url, pokemonName]);
@@ -52,14 +42,11 @@ function LocationDetails({ url, pokemonName }: any) {
 }
 
 export function Sample7() {
+  const pokemon = data.pokemon.read();
   return (
     <>
-      <Suspense fallback={<h1>Loading pokemon...</h1>}>
-        <PokemonPage />
-      </Suspense>
-      <Suspense fallback={<p>Loading encounters...</p>}>
-        <PokemonEncounters />
-      </Suspense>
+      <h1>{pokemon.name}</h1>;
+      <PokemonEncounters />
     </>
   );
 }

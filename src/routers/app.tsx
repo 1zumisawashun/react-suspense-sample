@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import {
   createBrowserRouter,
   ScrollRestoration,
@@ -16,13 +16,14 @@ const Sample5 = lazy(() => import("@/pages/05_sample"));
 const Sample6 = lazy(() => import("@/pages/06_sample"));
 const Sample7 = lazy(() => import("@/pages/07_sample"));
 const Sample8 = lazy(() => import("@/pages/08_sample"));
+const Sample9 = lazy(() => import("@/pages/09_sample"));
 
 function Layout() {
   return (
-    <>
+    <Suspense>
       <ScrollRestoration />
       <Outlet />
-    </>
+    </Suspense>
   );
 }
 
@@ -37,6 +38,7 @@ function children() {
     { path: "/06_sample", element: <Sample6 /> },
     { path: "/07_sample", element: <Sample7 /> },
     { path: "/08_sample", element: <Sample8 /> },
+    { path: "/09_sample", element: <Sample9 /> },
   ];
 
   return [...publicRoutes];
